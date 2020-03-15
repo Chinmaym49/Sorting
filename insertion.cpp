@@ -3,12 +3,15 @@ using namespace std;
 
 void insertion(int arr[]) {
     for(int i=1;i<10;i++) {
-        for(int j=i;j>0;j--) {
-            if(arr[j]<arr[j-1]) {
-                int temp=arr[j];
-                arr[j]=arr[j-1];
-                arr[j-1]=temp;
+        int x=arr[i];
+        for(int j=i-1;j>0;j--) {
+            if(x<arr[j]) 
+                arr[j+1]=arr[j];
+            else {
+                arr[j+1]=x;
+                break;
             }
+                
         }
     }
 }
